@@ -10,8 +10,9 @@ int degree(int a, int b) {
 	return a;
 }
 
-int sqrt(int a, int b) {
-	return a * 1/b;
+float sqrt(int a, int b) {
+
+	return a * (1/b);
 }
 
 int SorD(int(*f)(int, int), int a, int b) {
@@ -19,7 +20,7 @@ int SorD(int(*f)(int, int), int a, int b) {
 }
 
 main() {
-	system("chcp 1251");
+	system(RUS);
 	int i = 0;
 	int* i_adress = &i;
 	char text = ' ';
@@ -27,6 +28,7 @@ main() {
 	{
 		system("cls");
 		printf("i = %d\nРедактировать i - 1\nСоздание очистка динамического массива - 2\nВывод массива произвольной длины - 3\nФормирование треугольной матрицы - 4\nКорень числа - 5\nСтепень числа - 6\n", *i_adress);
+		printf("Нахождение длины отрезка по координатам двух его точек - 7\n");
 		scanf_s("%c", &text);
 		switch (text)
 		{
@@ -48,12 +50,30 @@ main() {
 		case '6':
 			GetSqrt();
 			break;
+		case '7':
+			GetLenght();
+			break;
 		default:
 			break;
 		}
 	}
 	
 
+}
+
+float GetLenght() {
+	system("cls");
+	int x1, y1, x2, y2;
+	printf("Введите x1\n");
+	scanf("%d", &x1);
+	printf("Введите y1\n");
+	scanf("%d", &y1);
+	printf("Введите x2\n");
+	scanf("%d", &x2);
+	printf("Введите y2\n");
+	scanf("%d", &y2);
+	printf("Длина отрезка - %f\n", sqrt(squaring(x2 - x1) + squaring(y2 - y1), 2));
+	system("pause");
 }
 
 void GetDegree() {
