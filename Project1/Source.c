@@ -1,5 +1,5 @@
-#define _CRT_SECURE_NO_WARNING
 #include "Headers.h"
+
 
 int degree(int a, int b) {
 	int s = a;
@@ -19,14 +19,14 @@ int SorD(int(*f)(int, int), int a, int b) {
 }
 
 main() {
-	setlocale(LC_ALL, "Rus");
+	system("chcp 1251");
 	int i = 0;
 	int* i_adress = &i;
 	char text = ' ';
 	while (1)
 	{
 		system("cls");
-		printf("i = %d\nРедактировать i - 1\nСоздание очистка динамического массива - 2\nВывод массива произвольной длины - 3\nФормирование треугольнойматрицы - 4\nКорень/степень числа - 5\n", *i_adress);
+		printf("i = %d\nРедактировать i - 1\nСоздание очистка динамического массива - 2\nВывод массива произвольной длины - 3\nФормирование треугольной матрицы - 4\nКорень числа - 5\nСтепень числа - 6\n", *i_adress);
 		scanf_s("%c", &text);
 		switch (text)
 		{
@@ -43,20 +43,11 @@ main() {
 			NDimensionalArray();
 			break;
 		case '5':
-			system("cls");
-			printf("Степень - 1\nКорень - 2\n");
-			scanf_s("%c", &text);
-			switch (text)
-			{
-			case '1':
-				GetDegree();
-				break;
-			case '2':
-				GetSqrt();
-				break;
-			default:
-				break;
-			}
+			GetDegree();
+			break;
+		case '6':
+			GetSqrt();
+			break;
 		default:
 			break;
 		}
@@ -114,6 +105,7 @@ void NDimensionalArray() {
 		printf("\n");
 	}
 	printf("\n");
+	free(a);
 	system("pause");
 }
 
